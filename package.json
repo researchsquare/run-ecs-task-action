@@ -1,0 +1,37 @@
+{
+  "name": "run-ecs-task-action",
+  "version": "0.1.0",
+  "description": "Uses an Amazon ECS task definition and runs a task on an ECS cluster.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint **.js && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/researchsquare/run-ecs-task-action.git"
+  },
+  "keywords": [
+    "AWS",
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "Research Square",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/researchsquare/run-ecs-task-action/issues"
+  },
+  "homepage": "https://github.com/researchsquare/run-ecs-task-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "aws-sdk": "^2.774.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.11.0",
+    "jest": "^26.6.0"
+  }
+}

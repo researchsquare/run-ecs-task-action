@@ -1,0 +1,32 @@
+name: 'Run ECS Task Action for GitHub Actions'
+description: 'Runs a one off task on an ECS cluster'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  task-definition-arn:
+    description: 'ECS task definition arn'
+    required: false
+  cluster:
+    description: "The name of the ECS service's cluster.  Will default to the 'default' cluster"
+    required: false
+  count:
+    description: "The number of tasks to start. Will default to 1"
+    required: false
+  wait-for-task-completion:
+    description: 'Whether to wait for the ECS task to finish processing. Valid value is "true". Will default to not waiting.'
+    required: false
+  wait-for-minutes:
+    description: 'How long to wait for the ECS task to finish processing, in minutes (default: 30 minutes, max: 6 hours).'
+    required: false
+  overrides:
+    description: 'Json object of task level overrides to use'
+    required: false
+outputs:
+  task-definition-arn:
+    description: 'The ARN of the registered ECS task definition'
+  task-arn-list:
+    description: 'List of ARNs of the ECS task(s) run'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
