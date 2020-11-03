@@ -94,7 +94,7 @@ async function run() {
     const cluster = core.getInput('cluster', { required: false });
     const taskCount = parseInt(core.getInput('count', { required: false })) || 1;
     const taskOverrides = core.getInput('overrides', { required: false });
-    const waitForTask = core.getInput('wait-for-service-stability', { required: false });
+    const waitForTask = core.getInput('wait-for-task-completion', { required: false });
     let waitForMinutes = parseInt(core.getInput('wait-for-minutes', { required: false })) || 30;
     if (waitForMinutes > MAX_WAIT_MINUTES) {
       waitForMinutes = MAX_WAIT_MINUTES;
