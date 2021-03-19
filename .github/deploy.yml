@@ -1,4 +1,4 @@
- production:
+production:
   environment: production
   production_environment: true
 
