@@ -6,6 +6,7 @@ name: Check
 jobs:
   check:
     name: Run Unit Tests
+    # For public repo's GH recommends not using self hosted
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
