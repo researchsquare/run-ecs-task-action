@@ -86,7 +86,7 @@ async function tasksExitCode(ecs, clusterName, taskArns) {
 async function run() {
   try {
     const ecs = new aws.ECS({
-      customUserAgent: 'amazon-ecs-deploy-task-definition-for-github-actions'
+      customUserAgent: 'amazon-ecs-run-task-definition-for-github-actions'
     });
 
     // Get inputs

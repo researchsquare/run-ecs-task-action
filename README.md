@@ -21,16 +21,15 @@ Runs a one off task on an ECS cluster.
       uses: researchsquare/run-ecs-task-action@v1
       with:
         task-definition: task-definition-arn
-        service: my-service
         cluster: my-cluster
-        wait-for-service-stability: true
+        wait-for-task-completion: true
 ```
 
 See [action.yml](action.yml) for the full documentation for this action's inputs and outputs.
 
 ### Sample workflow
 
-The task definition file can be updated prior to deployment with the new container image ID using [the `aws-actions/amazon-ecs-render-task-definition` action](https://github.com/aws-actions/amazon-ecs-render-task-definition).  The following example builds a new container image tagged with the commit ID, inserts the new image ID as the image for the `my-container` container in the task definition file, and then deploys the rendered task definition file to ECS:
+The task definition file can be updated prior to deployment with the new container image ID using [the `aws-actions/amazon-ecs-render-task-definition` action](https://github.com/aws-actions/amazon-ecs-render-task-definition). The following example builds a new container image tagged with the commit ID, inserts the new image ID as the image for the `my-container` container in the task definition file, and then deploys the rendered task definition file to ECS:
 
 ```yaml
     - name: Configure AWS credentials
@@ -73,10 +72,8 @@ The task definition file can be updated prior to deployment with the new contain
       uses: researchsquare/run-ecs-task-action@v1
       with:
         task-definition: task-definition-arn
-        service: my-service
         cluster: my-cluster
         wait-for-service-stability: true
-      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
 ```
 
 ## Credentials and Region
