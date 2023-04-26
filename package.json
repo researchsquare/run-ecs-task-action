@@ -26,8 +26,7 @@
   "homepage": "https://github.com/researchsquare/run-ecs-task-action#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "aws-sdk": "^2.1365.0",
-    "yaml": "^1.10.2"
+    "aws-sdk": "^2.1365.0"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
