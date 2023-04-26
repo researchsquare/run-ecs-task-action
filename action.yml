@@ -6,19 +6,23 @@ branding:
 inputs:
   task-definition-arn:
     description: 'ECS task definition arn'
-    required: false
+    required: true
   cluster:
     description: "The name of the ECS service's cluster.  Will default to the 'default' cluster"
     required: false
+    default: 'default'
   count:
     description: "The number of tasks to start. Will default to 1"
     required: false
+    default: 1
   wait-for-task-completion:
     description: 'Whether to wait for the ECS task to finish processing. Valid value is "true". Will default to not waiting.'
     required: false
+    default: false
   wait-for-minutes:
     description: 'How long to wait for the ECS task to finish processing, in minutes (default: 30 minutes, max: 6 hours).'
     required: false
+    default: 30
   overrides:
     description: 'Json object of task level overrides to use'
     required: false
