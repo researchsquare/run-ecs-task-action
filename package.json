@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint **.js",
     "package": "ncc build index.js -o dist",
-    "test": "npm lint && jest --coverage",
+    "test": "npm run lint && jest --coverage",
     "version": "npm run package && git add -A dist"
   },
   "repository": {
