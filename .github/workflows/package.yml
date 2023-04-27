@@ -36,13 +36,13 @@ jobs:
       if: ${{ steps.changelog.outputs.skipped == 'false' }}
       run: |
         git config --global user.name "GitHub Actions"
-        npm version ${{ steps.changelog.outputs.version }} -m "chore: Update dist and release %s"
-        git push && git push --tags
+        npm version ${{ steps.changelog.outputs.version }} --no-git-tag-version -m "chore: Update dist and release %s"
+        git push
 
     - name: Create a GitHub release
       if: ${{ steps.changelog.outputs.skipped == 'false' }}
       uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37
       with:
-        tag: ${{ steps.changelog.outputs.version }}
-        name: Release ${{ steps.changelog.outputs.version }}
+        tag: ${{ steps.changelog.outputs.tag }}
+        name: Release ${{ steps.changelog.outputs.tag }}
         body: ${{ steps.changelog.outputs.clean_changelog }}
