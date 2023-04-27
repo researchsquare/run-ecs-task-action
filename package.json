@@ -1,6 +1,6 @@
 {
   "name": "run-ecs-task-action",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Uses an Amazon ECS task definition and runs a task on an ECS cluster.",
   "main": "index.js",
   "scripts": {
