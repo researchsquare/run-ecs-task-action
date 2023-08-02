@@ -26,6 +26,9 @@ inputs:
   overrides:
     description: 'Json object of task level overrides to use'
     required: false
+  network-configuration:
+    description: 'Json object of task network configuration to use'
+    required: false
 outputs:
   task-definition-arn:
     description: 'The ARN of the registered ECS task definition'
