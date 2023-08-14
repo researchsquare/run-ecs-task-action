@@ -35,7 +35,6 @@ jobs:
         github-token: ${{ secrets.github_token }}
         skip-commit: "true"
         skip-on-empty: ${{ !inputs.tag-empty-release }}
-        skip-on-empty: "${{ inputs.tag-empty-release == 'false' }}"
         skip-tag: "true"
         skip-version-file: "true"
         output-file: "false"
