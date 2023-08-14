@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
     branches:
-      - test-publish
+      - main
     inputs:
       tag-empty-release:
         description: Tag an empty release (ex. a chore commit)
