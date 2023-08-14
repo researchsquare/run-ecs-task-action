@@ -2,6 +2,12 @@ on:
   workflow_dispatch:
     branches:
       - main
+    inputs:
+      tag-empty-release:
+        description: Tag an empty release (ex. a chore commit)
+        default: false
+        required: true
+        type: boolean
 
 name: Bump and Release
 
@@ -28,8 +34,9 @@ jobs:
       with:
         github-token: ${{ secrets.github_token }}
         skip-commit: "true"
-        skip-version-file: "true"
+        skip-on-empty: ${{ inputs.tag-empty-release == "false" }}
         skip-tag: "true"
+        skip-version-file: "true"
         output-file: "false"
 
     - name: Package and tag version
