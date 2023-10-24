@@ -30,7 +30,7 @@
     "aws-sdk": "^2.1365.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.36.1",
+    "@vercel/ncc": "^0.38.1",
     "eslint": "^7.32.0",
     "jest": "^27.5.1"
   }
